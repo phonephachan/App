@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="lo">
 <head>
-  <base target="_top">
+  <!-- <base target="_top">  <== FIX: ລຶບແຖວນີ້ອອກ, ບໍ່ຈຳເປັນສຳລັບ GitHub Pages -->
   <meta charset="UTF-8">
+  <!-- 
+    ສຳຄັນທີ່ສຸດ! ແຖວນີ້ບອກມືຖືໃຫ້ສະແດງຜົນຖືກຕ້ອງ
+  -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- ໂຫຼດ Tailwind CSS -->
@@ -25,11 +28,10 @@
     /* ຕັ້ງຄ່າໄອຄອນໃຫ້ໃຫຍ່ຂຶ້ນ */
     .material-symbols-outlined {
       /* ປັບຂະໜາດໄອຄອນຕາມອັດຕາສ່ວນຂອງວົງກົມ */
-      /* ===== FIX: ຫຼຸດຂະໜາດໄອຄອນລົງເລັກນ້ອຍເພື່ອຮອງຮັບ 4 ຖັນ ===== */
       font-size: 3.5rem; /* 56px */
     }
 
-    /* ===== FIX: ເພີ່ມ Media Query ເພື່ອປັບຂະໜາດໄອຄອນໃນຈໍໃຫຍ່ (lg) ===== */
+    /* ເພີ່ມ Media Query ເພື່ອປັບຂະໜາດໄອຄອນໃນຈໍໃຫຍ່ (lg) */
     @media (min-width: 1024px) {
       .material-symbols-outlined {
         font-size: 5rem; /* 80px */
@@ -39,37 +41,23 @@
 </head>
 <body class="bg-gray-100">
 
-  <!-- ປັບ px-4 ເປັນ px-6 ເພື່ອໃຫ້ມີຊ່ອງວ່າງຂ້າງໃນມືຖື -->
-  <!-- ປ່ຽນ layout ຈາກ flex items-center... ເປັນ flex flex-col... ເພື່ອຈັດລຽງແນວຕັ້ງ -->
-  <!-- ===== FIX: ເອົາ min-h-screen ແລະ justify-center ອອກ ເພື່ອໃຫ້ເນື້ອຫາຢູ່ດ້ານເທິງ ===== -->
   <div class="container mx-auto px-6 py-12 flex flex-col items-center">
     
-    <!-- === Wrapper ຖືກລຶບອອກ === -->
-    
-      <!-- === ສ່ວນຫົວ (ກ່ອງຖືກລຶບອອກ) === -->
-      <!-- ===== FIX: ເອົາກ່ອງສີຂາວອອກ ແລະ ເພີ່ມ mb-8 (margin-bottom) ໃສ່ h1 ===== -->
-      <!-- ===== FIX: ປັບຂະໜາດຫົວຂໍ້ໃນຈໍໃຫຍ່ (lg) ===== -->
-      <!-- ===== FIX: ລຶບ margin-bottom ເພື່ອຍ້າຍໄປໃສ່ເສັ້ນຂັ້ນ ===== -->
       <h1 class="text-3xl lg:text-4xl font-bold text-gray-700 text-center">
         App ທັງໝົດ
       </h1>
-      <!-- ======================= -->
       
-      <!-- ===== FIX: ເພີ່ມເສັ້ນຂັ້ນ ແລະ ໄລຍະຫ່າງ ===== -->
+      <!-- ເສັ້ນຂັ້ນ ແລະ ໄລຍະຫ່າງ -->
       <div class="w-full max-w-xl mx-auto my-8 lg:my-12">
         <hr class="border-gray-300">
       </div>
-      <!-- ==================================== -->
 
-      <!-- Container ສີຂາວດ້ານຫຼັງ (ກ່ອງຖືກລຶບອອກ) -->
-      <!-- ===== FIX: ເອົາກ່ອງສີຂາວອອກ ===== -->
-      
-        <!-- ===== FIX: ປັບ layout ເປັນ 2 columns (default) ແລະ 4 columns ໃນຈໍໃຫຍ່ (lg) ===== -->
-        <!-- ===== FIX: ປັບ gap-x-14 ເປັນ gap-x-8 ສຳລັບຈໍມືຖື ===== -->
-        <!-- ===== FIX: ປັບ gap ໃນຈໍໃຫຍ່ (lg) ===== -->
-        <!-- ===== FIX: ເພີ່ມໄລຍະຫ່າງ gap-x ໃຫ້ກວ້າງຂຶ້ນ ===== -->
-        <!-- ===== FIX: ເພີ່ມໄລຍະຫ່າງ gap-x ອີກ ===== -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-12 sm:gap-x-20 lg:gap-x-28 gap-y-16">
+      <!-- 
+        Responsive Grid:
+        - grid-cols-2   (default = 2 ຖັນ ສຳລັບມືຖື)
+        - lg:grid-cols-4 (lg = 4 ຖັນ ສຳລັບຈໍໃຫຍ່ 1024px ຂຶ້ນໄປ)
+      -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-12 sm:gap-x-20 lg:gap-x-28 gap-y-16">
 
           <!-- ປຸ່ມທີ 1: POS -->
           <!-- 
@@ -77,14 +65,11 @@
           ============================================================
         -->
         <a href="#" class="text-center no-underline text-gray-800 transition-transform duration-200 hover:scale-105">
-          <!-- ===== FIX: ປັບຂະໜາດວົງກົມໃນຈໍໃຫຍ່ (lg) ===== -->
           <div class="w-28 h-28 lg:w-40 lg:h-40 bg-orange-500 rounded-full shadow-lg flex items-center justify-center mx-auto">
-            <!-- ===== FIX: ປ່ຽນໄອຄອນ calculate ເປັນ point_of-sale ===== -->
             <span class="material-symbols-outlined text-white">
               point_of_sale
             </span>
           </div>
-          <!-- ===== FIX: ປັບຂະໜາດໂຕໜັງສືໃນຈໍໃຫຍ່ (lg) ===== -->
           <span class="mt-4 text-xl lg:text-2xl font-bold block">POS</span>
         </a>
 
@@ -95,13 +80,11 @@
           ============================================================
         -->
         <a href="#" class="text-center no-underline text-gray-800 transition-transform duration-200 hover:scale-105">
-          <!-- ===== FIX: ປັບຂະໜາດວົງກົມໃນຈໍໃຫຍ່ (lg) ===== -->
           <div class="w-28 h-28 lg:w-40 lg:h-40 bg-blue-500 rounded-full shadow-lg flex items-center justify-center mx-auto">
             <span class="material-symbols-outlined text-white">
               person
             </span>
           </div>
-          <!-- ===== FIX: ປັບຂະໜາດໂຕໜັງສືໃນຈໍໃຫຍ່ (lg) ===== -->
           <span class="mt-4 text-xl lg:text-2xl font-bold block">Employee</span>
         </a>
 
@@ -112,13 +95,11 @@
           ============================================================
         -->
         <a href="#" class="text-center no-underline text-gray-800 transition-transform duration-200 hover:scale-105">
-          <!-- ===== FIX: ປັບຂະໜາດວົງກົມໃນຈໍໃຫຍ່ (lg) ===== -->
           <div class="w-28 h-28 lg:w-40 lg:h-40 bg-green-500 rounded-full shadow-lg flex items-center justify-center mx-auto">
             <span class="material-symbols-outlined text-white">
               account_balance
             </span>
           </div>
-          <!-- ===== FIX: ປັບຂະໜາດໂຕໜັງສືໃນຈໍໃຫຍ່ (lg) ===== -->
           <span class="mt-4 text-xl lg:text-2xl font-bold block">Accounting</span>
         </a>
 
@@ -129,29 +110,17 @@
           ============================================================
         -->
         <a href="#" class="text-center no-underline text-gray-800 transition-transform duration-200 hover:scale-105">
-          <!-- ===== FIX: ປັບຂະໜາດວົງກົມໃນຈໍໃຫຍ່ (lg) ===== -->
           <div class="w-28 h-28 lg:w-40 lg:h-40 bg-red-500 rounded-full shadow-lg flex items-center justify-center mx-auto">
             <span class="material-symbols-outlined text-white">
               check_circle
             </span>
           </div>
-          
-          <!-- ===== FIX: ເພີ່ມໂຕໜັງສື "Check" ທີ່ຫາຍໄປ ແລະ ຍ້າຍ </a> ມາປິດບ່ອນນີ້ ===== -->
-          <!-- ===== FIX: ປັບຂະໜາດໂຕໜັງສືໃນຈໍໃຫຍ່ (lg) ===== -->
           <span class="mt-4 text-xl lg:text-2xl font-bold block">Check</span>
         </a>
-        <!-- ==================================================================== -->
 
-        </div> <!-- close grid -->
-      <!-- ===== FIX: ເອົາ closing div ຂອງກ່ອງສີຂາວອອກ ===== -->
-      <!-- ========================================= -->
+      </div> <!-- close grid -->
   
-    <!-- ===== FIX: ເອົາ closing div ຂອງ wrapper ອອກ ===== -->
-
   </div> <!-- === close container === -->
-
-  <!-- ===== FIX: ລຶບ div ທີ່ເກີນອອກ ===== -->
-  <!-- </div> -->
 
 </body>
 </html>
