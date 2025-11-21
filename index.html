@@ -92,5 +92,21 @@
 
       </div>
   </div>
+  <script>
+    function checkAccountingAccess() {
+      // ຖາມລະຫັດຜ່ານ
+      let password = prompt("ກະລຸນາໃສ່ລະຫັດຜ່ານເພື່ອເຂົ້າເຖິງ:");
+
+      // ກວດສອບວ່າລະຫັດຖືກບໍ່ (admin9944)
+      if (password === "admin9944") {
+        // ຖ້າຖືກ, ໃຫ້ໄປທີ່ລິ້ງ Accounting
+        // ຫມາຍເຫດ: ປ່ຽນ # ດ້ານລຸ່ມເປັນລິ້ງ App ທີ່ແທ້ຈິງຂອງເຈົ້າ
+        window.open("https://script.google.com/...", "_blank"); 
+      } else if (password !== null) {
+        // ຖ້າຜິດ (ແລະບໍ່ໄດ້ກົດ Cancel)
+        alert("ລະຫັດຜ່ານບໍ່ຖືກຕ້ອງ!");
+      }
+    }
+  </script>
 </body>
 </html>
